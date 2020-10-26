@@ -87,29 +87,29 @@ sudo service node-red start
 #---------------------------------------------------------------------
 # TEST
 MYTESTFOLDER="/home/pi/Desktop/soict_s4v/tests"
-sudo $MYTESTFOLDER/ws2811_1led -t 0x330000
-sleep 1
-sudo $MYTESTFOLDER/ws2811_1led -t 0x007700
-sleep 1
-sudo $MYTESTFOLDER/ws2811_1led -t 0x0000CC
-sleep 1
-sudo $MYTESTFOLDER/ws2811_1led -t 0xFFFFFF
-sleep 1
-sudo $MYTESTFOLDER/ws2811_1led -t 0x000000
 
 echo $(date +"%y-%m-%d %T") "RUN TEST" >> $LOGFILE
 #Testing by OS commandline or by nodejs instructions.   false / true
-if false; then
-    #Servo
+if true; then
+    #Servo, Led
     sudo nodejs $MYTESTFOLDER/test.root.js
     #Audio, Camera
     nodejs $MYTESTFOLDER/test.pi.js    
 else    
     #Led
-    sudo $MYTESTFOLDER/
+    sudo $MYTESTFOLDER/ws2811_1led -t 0x330000
+    sleep 1
+    sudo $MYTESTFOLDER/ws2811_1led -t 0x007700
+    sleep 1
+    sudo $MYTESTFOLDER/ws2811_1led -t 0x0000CC
+    sleep 1
+    sudo $MYTESTFOLDER/ws2811_1led -t 0xFFFFFF
+    sleep 1
+    sudo $MYTESTFOLDER/ws2811_1led -t 0x000000
 
     #Audio
     aplay $MYTESTFOLDER/chao.wav
+
     #Mic
     arecord -d 3 -c 1 /tmp/test_recording.wav
     sleep 1

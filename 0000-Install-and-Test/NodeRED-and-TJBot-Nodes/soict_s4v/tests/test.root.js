@@ -18,7 +18,13 @@ var sleep = require('sleep');
 
 const TJBot = require('tjbot');
 
-var tj = new TJBot(['servo'], {log: {level: 'debug'}}, {});
+var tj = new TJBot(['led','servo'], {log: {level: 'debug'}}, {});
+var colors = ['red', 'green', 'blue', 'orange', 'off'];
+
+colors.forEach(function(color) {
+    tj.shine(color);
+    sleep.sleep(1); 
+});
 
 console.log("Giơ tay phía trước ");
 tj.lowerArm();
