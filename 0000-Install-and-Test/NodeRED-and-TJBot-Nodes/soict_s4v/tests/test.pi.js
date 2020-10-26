@@ -54,17 +54,18 @@ var tj = new TJBot(['speaker', 'camera', 'microphone'],
                    {
                       log: {level: 'debug'},
                       robot: {                      // Text to speech
-                        gender: "female"
+                        gender: "male"
                       },                      
                       speak: {                      
                         language: "en-EN",          // Text to speech 
-                        speakerDeviceId: "default"  // Play sound. Xem ở file /home/pi/.asoundrc
+                        speakerDeviceId: "default"  // Play sound. Kiêm tra để điền đúng thông số bằng cách xem file /home/pi/.asoundrc
                       }
                     }, 
                     SteamWatsonCredentials
                     );
 
 //----------------------------------------------------------------------------
+// đã chạy ổn, nhưng sẽ gây treo tiến trình nếu không ai nói             
 /*
 console.log("Âm thanh in + nhận dạng + đọc lại");
 tj.listen((text) => {

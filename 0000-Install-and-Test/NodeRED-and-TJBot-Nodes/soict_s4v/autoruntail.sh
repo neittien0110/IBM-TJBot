@@ -101,7 +101,7 @@ echo $(date +"%y-%m-%d %T") "RUN TEST" >> $LOGFILE
 #Testing by OS commandline or by nodejs instructions.   false / true
 if false; then
     #Servo
-    sudo nodejs $MYTESTFOLDER/test.root .js
+    sudo nodejs $MYTESTFOLDER/test.root.js
     #Audio, Camera
     nodejs $MYTESTFOLDER/test.pi.js    
 else    

@@ -20,18 +20,18 @@ const TJBot = require('tjbot');
 
 var tj = new TJBot(['servo'], {log: {level: 'debug'}}, {});
 
-console.log("Giơ tay ra sau");
-tj.armBack();
-sleep.sleep(1); //
+console.log("Giơ tay phía trước ");
+tj.lowerArm();
+sleep.sleep(1); 
 
 console.log("Giơ tay lên trên");
 tj.raiseArm();
 sleep.sleep(1); //
 
+console.log("Giơ tay ra sau");
+tj.armBack();
+sleep.sleep(1); //
+
 console.log("Giơ tay phía trước ");
 tj.lowerArm();
-sleep.sleep(1); 
-
-console.log("Giơ tay ngang ra sau");
-tj.armBack();
-sleep.sleep(1); 
+sleep.sleep(1);
